@@ -1,12 +1,11 @@
 <template>
-
     <div class="head_main">
       <div class="head_pic">
           <img src="../assets/logo.png" alt="众智医疗">
       </div>
       <div class="head_content">
-          <router-link to="DS">数据管理</router-link>
-          <router-link to="">人员管理</router-link>
+          <router-link to="/DS">数据管理</router-link>
+          <router-link to="/roleManage">人员管理</router-link>
           <router-link to="">用户审核</router-link>
           <router-link to="">评论管理</router-link>
           <router-link to="">模型展示</router-link>
@@ -14,7 +13,6 @@
           <router-link to="">退出</router-link>
       </div>
     </div>
-
 </template>
 
 <script>
