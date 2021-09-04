@@ -4,7 +4,7 @@
       <el-button size="small" @click="goOff">返回</el-button>
     </div>
     <div class="content">
-      <el-table :data="tableData">
+      <el-table :data="tableData.slice((currentPage - 1) * pageSize, currentPage * pageSize)" class="aiLabel">
         <el-table-column type="expand">
           <template slot-scope="props">
             <el-form label-position="left" inline class="demo-table-expand">
@@ -32,11 +32,23 @@
         </el-table-column>
       </el-table>
     </div>
+    <div class="footer">
+      <el-pagination
+        @size-change="handleSizeChange"
+        @current-change="handleCurrentChange"
+        :current-page="currentPage"
+        :page-sizes="[10, 20, 30, 50]"
+        :page-size="pageSize"
+        layout="total,sizes,prev,pager,next,jumper"
+        :total="tableData.length"
+      >
+      </el-pagination>
+    </div>
   </div>
 </template>
 
 <script>
-import "@/assets/css/AILabel.css";
+import "@/assets/css/Data_Manage/AILabel.css";
 export default {
   name: "AILabel",
   data() {
@@ -69,9 +81,20 @@ export default {
         { text: "CQA", value: "CQA" },
         { text: "Intention/Action", value: "Intention/Action" },
       ],
+      currentPage: 1,
+      pageSize: 10,
     };
   },
   methods: {
+    handleSizeChange(val) {
+      console.log(`每页 ${val} 条`);
+      this.currentPage = 1;
+      this.pageSize = val;
+    },
+    handleCurrentChange(val) {
+      console.log(`当前页: ${val}`);
+      this.currentPage = val;
+    },
     goOff() {
       this.$router.go(-1);
     },

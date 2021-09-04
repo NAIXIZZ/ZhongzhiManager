@@ -58,7 +58,7 @@
       </div>
     </div>
     <div class="content">
-      <el-table
+      <el-table class="ds"
         :data="tableData.slice((currentPage - 1) * pageSize, currentPage * pageSize)"
       >
         <el-table-column type="expand">
@@ -180,6 +180,7 @@
                         v-model="setform.integral"
                         autocomplete="off"
                         placeholder="请输入积分"
+                        style="width:221px"
                       ></el-input>
                     </el-form-item>
                     <el-form-item
@@ -282,7 +283,7 @@
 </template>
 
 <script>
-import "@/assets/css/DS.css";
+import "@/assets/css/Data_Manage/DS.css";
 export default {
   name: "DS",
   data() {

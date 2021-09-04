@@ -9,7 +9,7 @@
     height: 7%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .search {
@@ -47,31 +47,53 @@
     padding: 20px 0;
 }
 
-.el-table__body-wrapper .el-table__body{
+.el-table__body-wrapper .el-table__body {
     table-layout: unset !important;
 }
- /* .el-table th.gutter{
+
+/* .el-table thead.has-gutter{
     display: table-cell !important;
-  } */
-  
-  .el-table__expanded-cell .el-table__header col{
-    width: 147px !important;
-  }
-  .el-table__expanded-cell .el-table__header col:nth-last-child(2){
-    width: 247px !important;
-  }
-  .el-table__expanded-cell .el-table__body td:last-child .el-button{
-    margin-right: 10px;
-  }
-  .el-table__expanded-cell .el-table__body .el-button:nth-last-child(2){
-    margin-left: 0;
-  }
-  .el-table__expanded-cell .el-table__body .task_label{
-    margin-right: -4px !important;
-  }
-  .el-table__expanded-cell .el-table__header col:last-child{
+} */
+
+.ds .el-table__header col:first-child {
+    width: 21px !important;
+}
+
+.ds .el-table__header col {
+    width: 151px !important;
+}
+
+.ds .el-table__header col:nth-last-child(2) {
+    width: 144px !important;
+}
+
+.ds .el-table__header col:last-child {
     width: 0 !important;
-  }
+}
+
+.ds .el-table__expanded-cell .el-table__header col {
+    width: 147px !important;
+}
+
+.ds .el-table__expanded-cell .el-table__header col:nth-last-child(2) {
+    width: 247px !important;
+}
+
+.ds .el-table__expanded-cell .el-table__body td:last-child .el-button {
+    margin-right: 10px;
+}
+
+.ds .el-table__expanded-cell .el-table__body .el-button:nth-last-child(2) {
+    margin-left: 0;
+}
+
+.ds .el-table__expanded-cell .el-table__body .task_label {
+    margin-right: -4px !important;
+}
+
+.ds .el-table__expanded-cell .el-table__header col:last-child {
+    width: 0 !important;
+}
 
 .cell {
     display: flex;
@@ -104,77 +126,77 @@
     /* border: 1px solid orange; */
 }
 
-.data_download{
+.data_download {
     border-radius: 30px !important;
     padding: 12px 12px !important;
     background: rgb(203, 250, 203) !important;
     border: 1px solid rgb(6, 207, 6) !important;
 }
 
-.data_download i{
+.data_download i {
     color: rgb(4, 153, 4);
 }
 
-.data_download:hover{
+.data_download:hover {
     background: rgb(180, 248, 180) !important;
 }
 
-.data_del{
+.data_del {
     border-radius: 30px !important;
     padding: 12px 12px !important;
     background: rgb(252, 230, 230) !important;
     border: 1px solid red !important;
 }
 
-.data_del i{
+.data_del i {
     color: red;
 }
 
-.data_del:hover{
+.data_del:hover {
     background: rgb(255, 206, 206) !important;
 }
 
-.task_set{
+.task_set {
     border-radius: 30px !important;
     padding: 12px 12px !important;
     background: rgb(219, 218, 218) !important;
     border: 1px solid gray !important;
 }
 
-.task_set i{
+.task_set i {
     color: gray;
 }
 
-.task_set:hover{
+.task_set:hover {
     background: rgb(182, 180, 180) !important;
 }
 
-.task_edit{
+.task_edit {
     border-radius: 30px !important;
     padding: 12px 12px !important;
     background: rgb(215, 215, 247) !important;
     border: 1px solid blue !important;
 }
 
-.task_edit i{
+.task_edit i {
     color: blue;
 }
 
-.task_edit:hover{
+.task_edit:hover {
     background: rgb(195, 195, 245) !important;
 }
 
-.task_label{
+.task_label {
     border-radius: 30px !important;
     padding: 12px 12px !important;
     background: rgb(250, 250, 215) !important;
     border: 1px solid rgb(189, 189, 17) !important;
 }
 
-.task_label i{
+.task_label i {
     color: rgb(161, 161, 55);
 }
 
-.task_label:hover{
+.task_label:hover {
     background: rgb(248, 248, 145) !important;
 }

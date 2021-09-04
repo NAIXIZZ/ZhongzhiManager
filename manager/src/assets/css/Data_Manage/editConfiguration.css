@@ -1,0 +1,26 @@
+.main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.operBar {
+    width: 100%;
+    justify-content: space-between;
+}
+
+/* .editConfiguration .el-table__header col:first-child {
+    width: 197px !important;
+}
+
+.editConfiguration .el-table__header col {
+    width: 197px !important;
+}
+
+.editConfiguration .el-table__header col:nth-last-child(2), .editConfiguration .el-table__header col:nth-last-child(3) {
+    width: 63px !important;
+}
+
+.editConfiguration .el-table__header col:last-child {
+    width: 0 !important;
+} */

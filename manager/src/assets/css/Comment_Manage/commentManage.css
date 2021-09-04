@@ -1,0 +1,15 @@
+/* .commentManage .el-table__header col:first-child {
+    width: 110px !important;
+}
+
+.commentManage .el-table__header col {
+    width: 109px !important;
+}
+
+.commentManage .el-table__header col:nth-last-child(2) {
+    width: 109px !important;
+}
+
+.commentManage .el-table__header col:last-child {
+    width: 0 !important;
+} */

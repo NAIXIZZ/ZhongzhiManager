@@ -1,5 +1,6 @@
 <template>
-  <el-table :data="tableData" style="width: 100%">
+<div class="content">
+  <el-table class="medical" :data="tableData.slice((currentPage - 1) * pageSize, currentPage * pageSize)" style="width: 100%">
     <el-table-column type="index"> </el-table-column>
     <el-table-column prop="userName" label="用户姓名"> </el-table-column>
     <el-table-column prop="userId" label="用户ID" sortable> </el-table-column>
@@ -21,11 +22,11 @@
           class="task_set"
         ></el-button>
         <el-button icon="el-icon-delete" class="data_del"></el-button>
-        <router-link to="userDetail">
-          <el-button icon="el-icon-tickets" class="task_label"></el-button>
+        <router-link to="/userDetail">
+          <el-button icon="el-icon-tickets" class="task_label" style="margin-left:10px"></el-button>
         </router-link>
         <el-dialog title="权限管理" :visible.sync="manageset" append-to-body>
-          <p v-if="scope.row.manager == '是'">管理员权限删除</p>
+          <p v-if="scope.row.manager ">管理员权限删除</p>
           <p v-else>设置为管理员</p>
           <div slot="footer" class="dialog-footer">
             <el-button @click="manageset = false">取 消</el-button>
@@ -37,9 +38,23 @@
       </template>
     </el-table-column>
   </el-table>
+  <div class="footer">
+      <el-pagination
+        @size-change="handleSizeChange"
+        @current-change="handleCurrentChange"
+        :current-page="currentPage"
+        :page-sizes="[10, 20,30,50]"
+        :page-size="pageSize"
+        layout="total,sizes,prev,pager,next,jumper"
+        :total="tableData.length"
+      >
+      </el-pagination>
+    </div>
+</div>
 </template>
 
 <script>
+import "@/assets/css/Role_Manage/roleManage.css";
 export default {
   name: "medicalManage",
   data() {
@@ -48,7 +63,7 @@ export default {
         {
           userName: "张三",
           userId: "00001",
-          manager: "是",
+          manager: true,
           integral: "1200",
           IdCard: "xxxxxxxxxxxxxxxxxx",
           phone: "xxxxxxxxxxx",
@@ -75,9 +90,20 @@ export default {
         { text: "否", value: "否" },
       ],
       manageset: false,
+      currentPage: 1,
+      pageSize: 10,
     };
   },
   methods: {
+    handleSizeChange(val) {
+      console.log(`每页 ${val} 条`);
+      this.currentPage = 1;
+      this.pageSize = val
+    },
+    handleCurrentChange(val) {
+      console.log(`当前页: ${val}`);
+      this.currentPage = val
+    },
     filterHandler(value, row, column) {
       const property = column["property"];
       return row[property] === value;

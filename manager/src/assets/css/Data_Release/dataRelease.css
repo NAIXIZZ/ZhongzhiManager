@@ -1,0 +1,15 @@
+.dataRelease .el-table__header col:first-child {
+    width: 33px !important;
+}
+
+.dataRelease .el-table__header col {
+    width: 113px !important;
+}
+
+.dataRelease .el-table__header col:nth-last-child(2) {
+    width: 223px !important;
+}
+
+.dataRelease .el-table__header col:last-child {
+    width: 0 !important;
+}

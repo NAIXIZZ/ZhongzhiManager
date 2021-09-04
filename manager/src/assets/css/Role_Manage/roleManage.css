@@ -1,0 +1,82 @@
+.left{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.left .el-button{
+    color: black;
+}
+
+.left .active{
+    color: #66b1ff;
+}
+
+.file_search .el-input{
+    width: 50%;
+}
+
+/* .medical .el-table__header col:first-child {
+    width: 37px !important;
+}
+
+.medical .el-table__header col {
+    width: 151px !important;
+}
+
+.medical .el-table__header col:nth-last-child(2) {
+    width: 151px !important;
+}
+
+.medical .el-table__header col:last-child {
+    width: 0 !important;
+}
+
+.demand .el-table__header col:first-child {
+    width: 47px !important;
+}
+
+.demand .el-table__header col {
+    width: 151px !important;
+}
+
+.demand .el-table__header col:nth-last-child(2) {
+    width: 150px !important;
+}
+
+.demand .el-table__header col:last-child {
+    width: 0 !important;
+}
+
+.visitLog .el-table__header col:first-child {
+    width: 155px !important;
+}
+
+.visitLog .el-table__header col {
+    width: 151px !important;
+}
+
+.visitLog .el-table__header col:nth-last-child(2) {
+    width: 150px !important;
+}
+
+.visitLog .el-table__header col:last-child {
+    width: 0 !important;
+}
+
+.taskDetail .el-table__header col:first-child {
+    width: 154px !important;
+}
+
+.taskDetail .el-table__header col {
+    width: 151px !important;
+}
+
+.taskDetail .el-table__header col:nth-last-child(2) {
+    width: 151px !important;
+}
+
+.taskDetail .el-table__header col:last-child {
+    width: 0 !important;
+} */

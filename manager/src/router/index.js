@@ -8,6 +8,15 @@ import medicalManage from '@/components/Role_Manage/medicalManage'
 import roleManage from '@/components/Role_Manage/roleManage'
 import taskDetail from '@/components/Role_Manage/taskDetail'
 import userDetail from '@/components/Role_Manage/userDetail'
+import visitLog from '@/components/Role_Manage/visitLog'
+import demandCheck from '@/components/User_Check/demandCheck'
+import medicalCheck from '@/components/User_Check/medicalCheck'
+import userCheck from '@/components/User_Check/userCheck'
+import commentManage from '@/components/Comment_Manage/commentManage'
+import modelDisplay from '@/components/Model_Display/modelDisplay'
+import dataRelease from '@/components/Data_Release/dataRelease'
+import viewDetail from '@/components/Data_Release/viewDetail'
+
 Vue.use(Router)
 
 export default new Router({
@@ -32,7 +41,6 @@ export default new Router({
       name: 'editConfiguration',
       component: editConfiguration
     },
-    
     {
       path: '/roleManage',
       name: 'roleManage',
@@ -40,37 +48,72 @@ export default new Router({
       redirect: '/roleManage/medicalManage',
       children: [
         {
-      path: 'demandManage',
-      name: 'demandManage',
-      component: demandManage
-    },
-    {
-      path: 'medicalManage',
-      name: 'medicalManage',
-      component: medicalManage
-    },
+          path: 'demandManage',
+          name: 'demandManage',
+          component: demandManage
+        },
+        {
+          path: 'medicalManage',
+          name: 'medicalManage',
+          component: medicalManage
+        },
       ]
-    },
-    {
-      path: '/taskDetail',
-      name: 'taskDetail',
-      component: taskDetail
     },
     {
       path: '/userDetail',
       name: 'userDetail',
-      component: userDetail
+      component: userDetail,
+      redirect: '/userDetail/visitLog',
+      children: [
+        {
+          path: 'visitLog',
+          name: 'visitLog',
+          component: visitLog
+        },
+        {
+          path: 'taskDetail',
+          name: 'taskDetail',
+          component: taskDetail
+        },
+      ]
     },
     {
-      path: '/AILabel',
-      name: 'AILabel',
-      component: AILabel
+      path: '/userCheck',
+      name: 'userCheck',
+      component: userCheck,
+      redirect: '/userCheck/medicalCheck',
+      children: [
+        {
+          path: 'medicalCheck',
+          name: 'medicalCheck',
+          component: medicalCheck
+        },
+        {
+          path: 'demandCheck',
+          name: 'demandCheck',
+          component: demandCheck
+        },
+      ]
     },
-
     {
-      path: '/AILabel',
-      name: 'AILabel',
-      component: AILabel
+      path: '/commentManage',
+      name: 'commentManage',
+      component: commentManage
     },
+    {
+      path: '/modelDisplay',
+      name: 'modelDisplay',
+      component: modelDisplay
+    },
+    {
+      path: '/dataRelease',
+      name: 'dataRelease',
+      component: dataRelease,
+    },
+    {
+      path: '/viewDetail',
+      name: 'viewDetail',
+      component: viewDetail
+    }
   ]
 })

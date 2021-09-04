@@ -1,0 +1,61 @@
+.check{
+    border-radius: 30px !important;
+    padding: 12px 12px !important;
+    background: rgb(187, 243, 187) !important;
+    border: 1px solid green !important;
+}
+
+.check i{
+    color: green;
+}
+
+.check:hover{
+    background: rgb(150, 235, 150) !important;
+}
+
+.fail{
+    border-radius: 30px !important;
+    padding: 12px 12px !important;
+    background: rgb(252, 230, 230) !important;
+    border: 1px solid red !important;
+}
+
+.fail i{
+    color: red;
+}
+
+.fail:hover{
+    background: rgb(255, 206, 206) !important;
+}
+
+/* .medicalCheck .el-table__header col:first-child {
+    width: 46px !important;
+}
+
+.medicalCheck .el-table__header col {
+    width: 109px !important;
+}
+
+.medicalCheck .el-table__header col:nth-last-child(2) {
+    width: 109px !important;
+}
+
+.medicalCheck .el-table__header col:last-child {
+    width: 0 !important;
+}
+
+.demandCheck .el-table__header col:first-child {
+    width: 34px !important;
+}
+
+.demandCheck .el-table__header col {
+    width: 109px !important;
+}
+
+.demandCheck .el-table__header col:nth-last-child(2) {
+    width: 109px !important;
+}
+
+.demandCheck .el-table__header col:last-child {
+    width: 0 !important;
+} */

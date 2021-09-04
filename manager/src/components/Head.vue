@@ -6,10 +6,10 @@
       <div class="head_content">
           <router-link to="/DS">数据管理</router-link>
           <router-link to="/roleManage">人员管理</router-link>
-          <router-link to="">用户审核</router-link>
-          <router-link to="">评论管理</router-link>
-          <router-link to="">模型展示</router-link>
-          <router-link to="">数据发布</router-link>
+          <router-link to="/userCheck">用户审核</router-link>
+          <router-link to="/commentManage">评论管理</router-link>
+          <router-link to="/modelDisplay">模型展示</router-link>
+          <router-link to="/dataRelease">数据发布</router-link>
           <router-link to="">退出</router-link>
       </div>
     </div>

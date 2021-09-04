@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="content">
-      <el-table :data="tableData" style="width: 100%" border>
+      <el-table :data="tableData" style="width: 100%" border class="editConfiguration">
         <el-table-column prop="ConfigID" label="ConfigID"> </el-table-column>
         <el-table-column prop="options" label="选项"> </el-table-column>
         <el-table-column prop="ENoptions" label="英文选项"> </el-table-column>
@@ -45,7 +45,7 @@
         :visible.sync="add_editDialog"
         append-to-body
       >
-        <el-form :model="add_editForm" :rules="rules" ref="add_editForm">
+        <el-form :model="add_editForm" ref="add_editForm">
           <el-form-item
             label="ConfigID"
             :label-width="formLabelWidth"
@@ -112,7 +112,7 @@
 </template>
 
 <script>
-import "@/assets/css/editConfiguration.css";
+import "@/assets/css/Data_Manage/editConfiguration.css";
 export default {
   name: "editConfiguration",
   data() {
@@ -155,6 +155,7 @@ export default {
         color: "",
       },
       add_editDialog: false,
+      formLabelWidth: "120px"
     };
   },
   methods: {
