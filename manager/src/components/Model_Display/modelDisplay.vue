@@ -30,7 +30,7 @@
         <el-table-column label="模型效果" prop="modeleffect" sortable>
         </el-table-column>
         <el-table-column
-          label="发布状态"
+          label="展示状态"
           prop="disp"
           :filters="disp"
           :filter-method="filterHandler"

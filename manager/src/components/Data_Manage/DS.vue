@@ -58,8 +58,11 @@
       </div>
     </div>
     <div class="content">
-      <el-table class="ds"
-        :data="tableData.slice((currentPage - 1) * pageSize, currentPage * pageSize)"
+      <el-table
+        class="ds"
+        :data="
+          tableData.slice((currentPage - 1) * pageSize, currentPage * pageSize)
+        "
       >
         <el-table-column type="expand">
           <template slot-scope="props">
@@ -180,7 +183,7 @@
                         v-model="setform.integral"
                         autocomplete="off"
                         placeholder="请输入积分"
-                        style="width:221px"
+                        style="width: 221px"
                       ></el-input>
                     </el-form-item>
                     <el-form-item
@@ -205,7 +208,7 @@
                 <router-link to="editConfiguration">
                   <el-button icon="el-icon-edit" class="task_edit"></el-button>
                 </router-link>
-                
+
                 <el-button
                   icon="el-icon-download"
                   onclick="window.location.href='https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'"
@@ -272,7 +275,7 @@
         @size-change="handleSizeChange"
         @current-change="handleCurrentChange"
         :current-page="currentPage"
-        :page-sizes="[10, 20,30,50]"
+        :page-sizes="[10, 20, 30, 50]"
         :page-size="pageSize"
         layout="total,sizes,prev,pager,next,jumper"
         :total="tableData.length"
@@ -284,6 +287,9 @@
 
 <script>
 import "@/assets/css/Data_Manage/DS.css";
+import {
+  findAll,
+} from "../network/DataManage";
 export default {
   name: "DS",
   data() {
@@ -323,86 +329,86 @@ export default {
         // }
       ],
       tableData: [
-        {
-          dataname: "数据集1",
-          dataauthor: "admin1",
-          datadate: "2021-06-11",
-          taskData: [
-            {
-              taskname: "NER NER01",
-              progress: "未完成",
-              config: "已上传",
-              label: "是",
-              staff: "test1",
-              taskauthor: "admin2",
-              taskdate: "2021-06-12",
-            },
-          ],
-        },
-        {
-          dataname: "数据集2",
-          dataauthor: "admin1",
-          datadate: "2021-06-10",
-          taskData: [
-            {
-              taskname: "NER NER01",
-              progress: "未完成",
-              config: "已上传",
-              label: "是",
-              staff: "test1",
-              taskauthor: "admin2",
-              taskdate: "2021-06-12",
-            },
-          ],
-        },
-        {
-          dataname: "数据集3",
-          dataauthor: "admin1",
-          datadate: "2021-06-11",
-          taskData: [
-            {
-              taskname: "NER NER01",
-              progress: "未完成",
-              config: "已上传",
-              label: "是",
-              staff: "test1",
-              taskauthor: "admin2",
-              taskdate: "2021-06-12",
-            },
-          ],
-        },
-        {
-          dataname: "数据集4",
-          dataauthor: "admin1",
-          datadate: "2021-06-12",
-          taskData: [
-            {
-              taskname: "NER NER01",
-              progress: "未完成",
-              config: "已上传",
-              label: "是",
-              staff: "test1",
-              taskauthor: "admin2",
-              taskdate: "2021-06-12",
-            },
-          ],
-        },
-        {
-          dataname: "数据集5",
-          dataauthor: "admin1",
-          datadate: "2021-06-13",
-          taskData: [
-            {
-              taskname: "NER NER01",
-              progress: "未完成",
-              config: "已上传",
-              label: "是",
-              staff: "test1",
-              taskauthor: "admin2",
-              taskdate: "2021-06-12",
-            },
-          ],
-        },
+        // {
+        //   dataname: "数据集1",
+        //   dataauthor: "admin1",
+        //   datadate: "2021-06-11",
+        //   taskData: [
+        //     {
+        //       taskname: "NER NER01",
+        //       progress: "未完成",
+        //       config: "已上传",
+        //       label: "是",
+        //       staff: "test1",
+        //       taskauthor: "admin2",
+        //       taskdate: "2021-06-12",
+        //     },
+        //   ],
+        // },
+        // {
+        //   dataname: "数据集2",
+        //   dataauthor: "admin1",
+        //   datadate: "2021-06-10",
+        //   taskData: [
+        //     {
+        //       taskname: "NER NER01",
+        //       progress: "未完成",
+        //       config: "已上传",
+        //       label: "是",
+        //       staff: "test1",
+        //       taskauthor: "admin2",
+        //       taskdate: "2021-06-12",
+        //     },
+        //   ],
+        // },
+        // {
+        //   dataname: "数据集3",
+        //   dataauthor: "admin1",
+        //   datadate: "2021-06-11",
+        //   taskData: [
+        //     {
+        //       taskname: "NER NER01",
+        //       progress: "未完成",
+        //       config: "已上传",
+        //       label: "是",
+        //       staff: "test1",
+        //       taskauthor: "admin2",
+        //       taskdate: "2021-06-12",
+        //     },
+        //   ],
+        // },
+        // {
+        //   dataname: "数据集4",
+        //   dataauthor: "admin1",
+        //   datadate: "2021-06-12",
+        //   taskData: [
+        //     {
+        //       taskname: "NER NER01",
+        //       progress: "未完成",
+        //       config: "已上传",
+        //       label: "是",
+        //       staff: "test1",
+        //       taskauthor: "admin2",
+        //       taskdate: "2021-06-12",
+        //     },
+        //   ],
+        // },
+        // {
+        //   dataname: "数据集5",
+        //   dataauthor: "admin1",
+        //   datadate: "2021-06-13",
+        //   taskData: [
+        //     {
+        //       taskname: "NER NER01",
+        //       progress: "未完成",
+        //       config: "已上传",
+        //       label: "是",
+        //       staff: "test1",
+        //       taskauthor: "admin2",
+        //       taskdate: "2021-06-12",
+        //     },
+        //   ],
+        // },
       ],
       taskset: false,
       setform: {
@@ -446,15 +452,25 @@ export default {
       pageSize: 10,
     };
   },
+  mounted() {
+    this.getAll();
+  },
   methods: {
+    getAll() {
+      findAll().then((res) => {
+        this.tableData = [];
+        this.tableData = res;
+        console.log(res);
+      });
+    },
     handleSizeChange(val) {
       console.log(`每页 ${val} 条`);
       this.currentPage = 1;
-      this.pageSize = val
+      this.pageSize = val;
     },
     handleCurrentChange(val) {
       console.log(`当前页: ${val}`);
-      this.currentPage = val
+      this.currentPage = val;
     },
     handleRemove(file, fileList) {
       console.log(file, fileList);
